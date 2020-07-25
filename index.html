@@ -7,14 +7,19 @@
     <title></title>
   </head>
   <body>
-      <header>
-          <h1>Picker</h1>
-      </header>
-      <div class="picker-div">
-        <input type="text" id="name">
-        <button id="submit" class="btn" onclick="test(event)">Add</button>
-        <h1 id="nameDisplay"></h1>
-        <button id="random" class="btn">Get Random</button>
+      
+      <div class="container">
+        <div class="picker-div">
+            <h1 id="title">Picker</h1>
+            <input type="text" id="name">
+            <button id="submit" class="btn" onclick="test(event)">Add</button>
+            <h1 id="nameDisplay"></h1>
+            <button id="random" class="btn">Get Random</button>
+        </div>
+        <div class="list">
+            <h1 id="kids">Kid List</h1>
+                <ol id="kidsList"></ol>
+        </div>
       </div>
     <script src="app.js"></script>
   </body>
