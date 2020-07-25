@@ -28,6 +28,9 @@ name.addEventListener('keyup', function(event) {
     }
 })
 
+
+// How to get it to only show each name once and then reset. Need to eliminate names from being called twice. Math.random isn't working. Not sure how to fix
+
 i=0
 
 function pickRandom () {
