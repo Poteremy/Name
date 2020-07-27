@@ -47,7 +47,6 @@ input:focus {
     align-items: center;
     font-size: 100px;
     color: black;
-    /* background-color: lightgreen; */
 }
 
 #submit {
@@ -64,6 +63,10 @@ input:focus {
     transform: translateY(-1px)
 }
 
+.btn:focus {
+    outline: none;
+}
+
 #kids {
     margin: 30px 0;
     text-decoration: underline;
@@ -76,4 +79,9 @@ input:focus {
 
 .picked {
     text-decoration: line-through;
+    font-weight: bolder;
+}
+
+.hidden {
+    display: none;
 }

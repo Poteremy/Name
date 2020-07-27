@@ -6,6 +6,8 @@ let submit = document.getElementById('submit');
 let nameDisplay = document.getElementById('nameDisplay');
 let random = document.getElementById('random');
 let kidsList = document.getElementById('kidsList');
+let resetBtn = document.getElementById('reset');
+
 let i 
 
 test = (e) => {
@@ -27,56 +29,46 @@ name.addEventListener('keyup', function(event) {
     }
 })
 
-// How to get it to only show each name once and then reset. Need to eliminate names from being called twice. Math.random isn't working. Not sure how to fix
+resetBtn.addEventListener('click', reset)
 
-random.addEventListener('click', pickRandom);
-random.innerText = 'Get Random'
-
-
+let x = 0
 function pickRandom () {
     let ran = Math.floor(Math.random() * arr.length);
     let ranName = arr[ran];
     let listItems = document.querySelectorAll('li')
 
-    if(ranName['picked'] === false){
-        for(list of listItems) {
+    if(x<arr.length){
+        if(ranName['picked'] === false){
+            x++
+            nameDisplay.textContent = ranName['text']
+            ranName['picked'] = true
             listItems.forEach(list => {
-            if(list.classList.contains('picked')) {
-                return
-            } else {
-                nameDisplay.textContent = ranName['text']
-                ranName['picked'] = true
-                if(list.classList == nameDisplay.textContent) {
+                if(list.textContent === nameDisplay.textContent){
                     list.classList.add('picked')
                 } else {
-                    return } 
-                }}    
-            )}
+                    return }
+                })
         } else {
-            pickRandom() 
+            pickRandom() }
         }
-    
-    arr.every((obj) => {
-        if(obj.picked === false) {
-            return
-        } else {
-            obj.picked = false;
-            random.innerText = 'Reset'
-            random.addEventListener('click', reset)
-        }
-    })
+     else {
+        resetBtn.click()
+    } 
 
-    console.log(arr)
-    
+    if(x===arr.length) {
+        random.innerText = 'Reset'
+    } else{return}
 }
 
 function reset() {
+    x=0
+    random.innerText = 'Get Random'
+    arr.forEach(obj=>{obj.picked = false})
     let listItems = document.querySelectorAll('li')
     listItems.forEach(list => {
         list.classList.remove('picked')
-        random.innerText = "Get Random"
         nameDisplay.innerText = ''
     })
 }
 
-
+random.addEventListener('click', pickRandom)
