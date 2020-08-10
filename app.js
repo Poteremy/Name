@@ -11,16 +11,14 @@ let resetBtn = document.getElementById('reset');
 let i 
 
 test = (e) => {
-    i=0
     e.preventDefault();
-    let obj = ({"text": name.value, "id": i, "picked": false})
+    let obj = ({"text": name.value, "picked": false})
     arr.push(obj);
     let create = document.createElement('li');
     create.setAttribute('class', obj['text']);
     kidsList.appendChild(create);
     create.innerText = obj.text;
     name.value='';
-    i++;
 }
 
 name.addEventListener('keyup', function(event) {
@@ -68,6 +66,13 @@ function reset() {
     listItems.forEach(list => {
         list.classList.remove('picked')
         nameDisplay.innerText = ''
+    })
+}
+
+function resetAll() {
+    arr.splice(0, arr.length)
+    document.querySelectorAll('li').forEach(el => {
+        el.remove()
     })
 }
 

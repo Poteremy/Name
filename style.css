@@ -3,6 +3,7 @@
     padding: 0;
     background-color: #ffffcc;
     font-family: Arial, Helvetica, sans-serif;
+    color: #222;
 }
 
 .container {
@@ -46,7 +47,7 @@ input:focus {
     justify-content: center;
     align-items: center;
     font-size: 100px;
-    color: black;
+    color: #222;
 }
 
 #submit {
@@ -60,11 +61,19 @@ input:focus {
 
 .btn:hover{
     cursor: pointer;
-    transform: translateY(-1px)
+    transform: translateY(-1px);
+    background-color: #e0e0b2;
 }
 
 .btn:focus {
     outline: none;
+}
+
+#clear {
+    margin-top: 20px;
+    width: 124px;
+    background-color: #e0e0b2;
+
 }
 
 #kids {
